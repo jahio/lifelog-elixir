@@ -27,13 +27,15 @@ LifeLog is that better way.
 
 ## About
 
-| Status            | Vaporware |
-| Built In          | Elixir / Phoenix |
-| License           | MIT or something, will figure that out later |
-| Production-ready? | **HELL NO!** | 
+| Factor            | Value                                                         |
+| ----------------- | ------------------------------------------------------------- |
+| Status            | Vaporware                                                     |
+| Built In          | Elixir / Phoenix                                              |
+| License           | MIT or something, will figure that out later                  |
+| Production-ready? | **HELL NO!**                                                  |
 | Type              | HTTP API with optional HTML5/CSS/JS front-end for the browser |
-| Database Format   | SQLite3 (for now) |
-| OS Requirements   | If it runs Erlang bytecode, it should run this |
+| Database Format   | SQLite3 (for now)                                             |
+| OS Requirements   | If it runs Erlang bytecode, it should run this                |
 
 ### The Story: A man and his dog
 
