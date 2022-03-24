@@ -10,19 +10,36 @@
 import Config
 
 # Configure Mix tasks and generators
+config :ll_data,
+  namespace: LifeLog,
+  ecto_repos: [LifeLog.Repo]
+
+# Configures the mailer
+#
+# By default it uses the "Local" adapter which stores the emails
+# locally. You can see the emails in your browser, at "/dev/mailbox".
+#
+# For production it's recommended to configure a different adapter
+# at the `config/runtime.exs`.
+config :ll_data, LifeLog.Mailer, adapter: Swoosh.Adapters.Local
+
+# Swoosh API client is needed for adapters other than SMTP.
+config :swoosh, :api_client, false
+
+# Configure Mix tasks and generators
 config :lifelog,
   namespace: LifeLog,
   ecto_repos: [LifeLog.Repo]
 
 # Config for repos
 config :lifelog, Lifelog.Repo,
-  database:              "lifelog",
-  username:              "postgres",
-  password:              "postgres",
-  hostname:              "localhost",
+  database: "lifelog",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
   migration_primary_key: [name: :uuid, type: :binary_id],
   migration_foreign_key: [name: :uuid, type: :binary_id],
-  migration_timestamps:  [type: :utc_datetime]
+  migration_timestamps: [type: :utc_datetime]
 
 # Configures the mailer
 #

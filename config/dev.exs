@@ -1,6 +1,15 @@
 import Config
 
 # Configure your database
+config :ll_data, LifeLog.Repo,
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  database: "ll_data_dev",
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
+# Configure your database
 config :lifelog, LifeLog.Repo,
   # database: Path.expand("../lifelog_dev.db", Path.dirname(__ENV__.file)),
   # pool_size: 5,

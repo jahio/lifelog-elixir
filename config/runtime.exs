@@ -7,12 +7,27 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 if config_env() == :prod do
+  database_url =
+    System.get_env("DATABASE_URL") ||
+      raise """
+      environment variable DATABASE_URL is missing.
+      For example: ecto://USER:PASS@HOST/DATABASE
+      """
+
+  maybe_ipv6 = if System.get_env("ECTO_IPV6"), do: [:inet6], else: []
+
+  config :ll_data, LifeLog.Repo,
+    # ssl: true,
+    url: database_url,
+    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+    socket_options: maybe_ipv6
+
   # database_path =
-    # System.get_env("DATABASE_PATH") ||
-    #   raise """
-    #   environment variable DATABASE_PATH is missing.
-    #   For example: /etc/lifelog/lifelog.db
-    #   """
+  # System.get_env("DATABASE_PATH") ||
+  #   raise """
+  #   environment variable DATABASE_PATH is missing.
+  #   For example: /etc/lifelog/lifelog.db
+  #   """
 
   config :lifelog, LifeLog.Repo,
     database: "lifelog",
