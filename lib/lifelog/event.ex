@@ -6,7 +6,7 @@ defmodule Lifelog.Event do
   @foreign_key_type :binary_id
   schema "events" do
     # field :namespace, Ecto.UUID
-    belongs_to :namespace, Namespace
+    belongs_to :namespace, Lifelog.Namespace
     field :notes, :string
     field :when, :utc_datetime
     field :label, :string

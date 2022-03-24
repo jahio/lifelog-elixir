@@ -5,6 +5,7 @@ defmodule Lifelog.Namespace do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "namespaces" do
+    has_many :events, Lifelog.Event
     field :desc, :string
     field :icon, :string
     field :label, :string
