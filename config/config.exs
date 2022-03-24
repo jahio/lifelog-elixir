@@ -14,6 +14,16 @@ config :lifelog,
   namespace: LifeLog,
   ecto_repos: [LifeLog.Repo]
 
+# Config for repos
+config :lifelog, Lifelog.Repo,
+  database:              "lifelog",
+  username:              "postgres",
+  password:              "postgres",
+  hostname:              "localhost",
+  migration_primary_key: [name: :uuid, type: :binary_id],
+  migration_foreign_key: [name: :uuid, type: :binary_id],
+  migration_timestamps:  [type: :utc_datetime]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
