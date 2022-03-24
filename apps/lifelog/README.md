@@ -1,3 +1,0 @@
-# LifeLog
-
-**TODO: Add description**
