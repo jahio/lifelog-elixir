@@ -9,7 +9,7 @@ config :lifelog, Lifelog.Repo,
   username: "dev",
   password: "dev",
   hostname: "localhost",
-  database: "lifelog_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "lifelog-test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
