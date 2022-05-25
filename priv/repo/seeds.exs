@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+# Temporary user for local development/hax/testing
+
+Lifelog.Repo.Insert!(%Lifelog.User{email:"lifelog@jah.io", password:"lolwtfbbq"})
